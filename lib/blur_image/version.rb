@@ -1,0 +1,3 @@
+module BlurImage
+  VERSION = '0.0.1'
+end

@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+#
+# USAGE:
+#
+#   blur_image path/to/src_image_path path/to/dest_image_path
+#
+lib_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(lib_path)
+
+require 'blur_image'
+
+src_path  = ARGV.shift
+dest_path = ARGV.shift
+sharpness = ARGV.shift || BlurImage::DEFAULT_SHARPNESS
+
+image = BlurImage.blur(File.read(src_path), sharpness)
+
+image.write(dest_path)

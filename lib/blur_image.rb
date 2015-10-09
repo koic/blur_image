@@ -1,14 +1,16 @@
 require 'mini_magick'
 
 module BlurImage
-  def blur(src_path, dest_path, sharpness = 10)
-    image = MiniMagick::Image.read(File.read(src_path))
+  DEFAULT_SHARPNESS = 10
+
+  def blur(original_file, sharpness = DEFAULT_SHARPNESS)
+    image = MiniMagick::Image.read(original_file)
 
     image.combine_options do |c|
       c.blur "#{sharpness}x#{sharpness}"
     end
 
-    image.write(dest_path)
+    image
   end
 
   module_function :blur

@@ -2,6 +2,38 @@
 
 blur image.
 
+## USAGE
+
+$ blur_image -s10 path/to/original_file path/to/blur_file
+
+### A little more in detail
+
+You can specify sharpness (blur condition) in the `-s` option. that value is default 10.
+
+## REQUIREMENTS
+
+* [MiniMagick](https://github.com/minimagick/minimagick)
+
+## INSTALL
+
+Add these lines to your application's Gemfile:
+
+```
+gem 'blur_image'
+```
+
+And then execute:
+
+```
+$ bundle
+```
+
+Or install it yourself as:
+
+```
+$ gem install blur_image
+```
+
 ## Contributing
 
 1. Fork it

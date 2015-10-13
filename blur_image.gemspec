@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
 
   s.add_dependency('mini_magick')
+  s.add_development_dependency('rspec', '>= 3.0.0')
 end

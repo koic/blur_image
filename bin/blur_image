@@ -2,17 +2,38 @@
 #
 # USAGE:
 #
-#   blur_image path/to/src_image_path path/to/dest_image_path
+#   blur_image -s10 path/to/src_image_path path/to/dest_image_path
 #
 lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
 require 'blur_image'
+require 'blur_image/version'
+require 'optparse'
 
-src_path  = ARGV.shift
-dest_path = ARGV.shift
-sharpness = ARGV.shift || BlurImage::DEFAULT_SHARPNESS
+Version = BlurImage::VERSION
 
-image = BlurImage.blur(File.read(src_path), sharpness)
+options = {}
 
-image.write(dest_path)
+opt = OptionParser.new('usage: blur_image [-s sharpness] source_file target_file')
+
+opt.on('-s', '--sharpness n (DEFAULT 10)') {|v| options[:sharpness] = v }
+
+begin
+  opt.permute!(ARGV)
+
+  raise unless ARGV.size == 2
+
+  src_path  = ARGV.shift
+  dest_path = ARGV.shift
+
+  sharpness = options[:sharpness] || BlurImage::DEFAULT_SHARPNESS
+
+  image = BlurImage.blur(File.read(src_path), sharpness)
+
+  image.write(dest_path)
+rescue => e
+  puts opt.help
+
+  exit!
+end

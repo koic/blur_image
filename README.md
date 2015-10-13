@@ -4,11 +4,13 @@ blur image.
 
 ## USAGE
 
+```
 $ blur_image -s10 path/to/original_file path/to/blur_file
+```
 
 ### A little more in detail
 
-You can specify sharpness (blur condition) in the `-s` option. that value is default 10.
+You can specify sharpness (blur condition) in the `-s` option. That value is default 10.
 
 ## REQUIREMENTS
 

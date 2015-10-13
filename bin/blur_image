@@ -32,7 +32,7 @@ begin
   image = BlurImage.blur(File.read(src_path), sharpness)
 
   image.write(dest_path)
-rescue => e
+rescue
   puts opt.help
 
   exit!

@@ -2,7 +2,9 @@
 
 blur image.
 
-## USAGE
+## USAGE (Using with command line)
+
+An example `blue_image` command.
 
 ```
 $ blur_image -s10 path/to/original_file path/to/blur_file
@@ -11,6 +13,20 @@ $ blur_image -s10 path/to/original_file path/to/blur_file
 ### A little more in detail
 
 You can specify sharpness (blur condition) in the `-s` option. That value is default 10.
+
+## USAGE (Using with Programming Ruby)
+
+An example Ruby code.
+
+```ruby
+require 'blur_image'
+
+original_image = File.read('path/to/src_file')
+
+blur_image = BlurImage.blur(original_image)
+
+blur_image.write('path/to/dest_file')
+```
 
 ## REQUIREMENTS
 

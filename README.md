@@ -1,4 +1,4 @@
-# blur_image
+# blur_image [![Gem Version](https://badge.fury.io/rb/blur_image.svg)](http://badge.fury.io/rb/blur)
 
 blur image.
 

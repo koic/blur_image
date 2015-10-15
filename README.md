@@ -7,7 +7,7 @@ blur image.
 An example `blue_image` command.
 
 ```
-$ blur_image -s10 path/to/original_file path/to/blur_file
+$ blur_image -s10 path/to/original_file path/to/blurred_file
 ```
 
 ### A little more in detail
@@ -21,11 +21,11 @@ An example Ruby code.
 ```ruby
 require 'blur_image'
 
-original_image = File.read('path/to/src_file')
+original_image = File.read('path/to/original_file')
 
-blur_image = BlurImage.blur(original_image)
+blurred_image = BlurImage.blur(original_image)
 
-blur_image.write('path/to/dest_file')
+blurred_image.write('path/to/blurred_file')
 ```
 
 ## REQUIREMENTS

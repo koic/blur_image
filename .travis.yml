@@ -1,5 +1,8 @@
 language: ruby
 before_install:
+  - sudo apt-get update
+  - sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
+  - sudo apt-get install -qq graphicsmagick
   - gem update bundler
 gemfile:
   - Gemfile
@@ -9,6 +12,3 @@ rvm:
   - ruby-head
 script:
   - bundle exec rspec spec
-before_install:
-  - sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
-  - sudo apt-get install -qq graphicsmagick
